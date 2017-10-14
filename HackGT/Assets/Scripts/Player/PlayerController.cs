@@ -18,10 +18,12 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
+    private PlayerFireController fireController;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        fireController = gameObject.GetComponentInChildren<PlayerFireController>();
     }
 
     void Update()
@@ -36,5 +38,11 @@ public class PlayerController : MonoBehaviour
         }
         moveDirection.y -= gravity * Time.deltaTime;
         controller.Move(moveDirection * Time.deltaTime);
+
+        //attack
+        if (Input.GetMouseButton(0)) {
+            fireController.Fire();
+        }
+
     }
 }

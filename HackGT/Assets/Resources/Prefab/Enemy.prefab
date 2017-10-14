@@ -39,10 +39,10 @@ GameObject:
   - component: {fileID: 23151024046091670}
   - component: {fileID: 114611833602147304}
   - component: {fileID: 114154374147805386}
-  - component: {fileID: 114425278291737116}
+  - component: {fileID: 114532303046185362}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 0}
   bulletSpawn: {fileID: 0}
   fireRate: 1
---- !u!114 &114425278291737116
+--- !u!114 &114532303046185362
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -152,7 +152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f306194972ba9f14db7207e84012b5cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  startingHealth: 100
+  currentHealth: 0
+  damageImage: {fileID: 0}
+  flashSpeed: 5
+  flashColour: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &114611833602147304
 MonoBehaviour:
   m_ObjectHideFlags: 1

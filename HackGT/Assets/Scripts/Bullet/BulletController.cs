@@ -7,10 +7,13 @@ public class BulletController : MonoBehaviour {
     public float movementSpeed;
     private float timePassed;
     public float timeAlive;
+    public int damage;
+    private GameObject owner;
     // Use this for initialization
     void Start() {
         timeAlive = 5;
         timePassed = 0f;
+        damage = 10;
     }
 
     // Update is called once per frame
@@ -23,10 +26,18 @@ public class BulletController : MonoBehaviour {
         
     }
 
-    void OnCollisionEnter(Collision col) {
+    public void SetOwner(GameObject obj) {
+        owner = obj;
+    }
 
-        if (col.gameObject.tag == "Player") {
-            //do something
+    void OnCollisionEnter(Collision col) {
+        Debug.Log(owner.tag);   
+        if (col.gameObject.tag == "Player" && owner.tag == "Enemy") {
+            col.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
+            Destroy(gameObject);
+        } else if (col.gameObject.tag == "Enemy" && owner.tag == "Player") {
+            col.gameObject.GetComponent<EnemyHealthController>().TakeDamage(damage);
+            Destroy(gameObject);
         }
         if (col.gameObject.layer == 8) {
    

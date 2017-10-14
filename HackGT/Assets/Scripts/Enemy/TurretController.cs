@@ -30,5 +30,6 @@ public class TurretController : MonoBehaviour {
             bulletPrefab,
             bulletSpawn.position,
             bulletSpawn.rotation);
+        bullet.GetComponent<BulletController>().SetOwner(gameObject);
     }
 }

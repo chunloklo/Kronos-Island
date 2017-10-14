@@ -11,24 +11,26 @@ public class PlayerFireController : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        bulletPrefab = (GameObject)Resources.Load("Bullet");
-        bulletSpawn = transform.Find("Gunpoint");
+        bulletPrefab = (GameObject)Resources.Load("Prefab/PlayerBullet");
+        bulletSpawn = transform;
         timer = 0f;
     }
 
     // Update is called once per frame
     void Update() {
-        timer += Time.deltaTime;
-        if (timer > 1 / fireRate) {
-            Fire();
-            timer = 0f;
-        }
+        timer -= Time.deltaTime;
     }
 
-    void Fire() {
-        GameObject bullet = (GameObject)Instantiate(
+
+    public void Fire() {
+        if (timer <= 0) {
+            GameObject bullet = (GameObject)Instantiate(
             bulletPrefab,
             bulletSpawn.position,
             bulletSpawn.rotation);
+            bullet.GetComponent<BulletController>().SetOwner(transform.parent.gameObject);
+            timer = 1 / fireRate;
+        }
+        
     }
 }
