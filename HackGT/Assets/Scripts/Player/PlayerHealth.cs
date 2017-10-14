@@ -5,18 +5,21 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour {
 
+    GameObject player;
+
     public int startingHealth = 100;
     public int currentHealth;
     public Image damageImage;
     public Slider healthSlider;
     public float flashSpeed = 5f;
     public Color flashColour = Color.red;
-
+    
     bool isDead;
     bool damaged;
 
     void Awake ()
     {
+        //player = GameObject.FindGameObjectWithTag("Player");
         currentHealth = startingHealth;
     }
 
@@ -37,7 +40,7 @@ public class PlayerHealth : MonoBehaviour {
     {
         damaged = true;
         currentHealth -= amount;
-        healthSlider.value = currentHealth;
+        //healthSlider.value = currentHealth;
         if(currentHealth <= 0 && !isDead)
         {
             Death();

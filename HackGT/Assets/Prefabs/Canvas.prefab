@@ -35,6 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224064858816226330}
   - component: {fileID: 114117408777237836}
+  - component: {fileID: 114071026109638864}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -126,6 +127,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114071026109638864
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1045745273367048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29da03eee04627c4ab1b9c3355ab7628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114117408777237836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -337,8 +349,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1029145340637258}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 75, y: 10, z: 0}
-  m_LocalScale: {x: 0, y: 1, z: 1}
+  m_LocalPosition: {x: 78, y: 10, z: 0}
+  m_LocalScale: {x: 1.1, y: 1, z: 1}
   m_Children:
   - {fileID: 224677536692967128}
   m_Father: {fileID: 224064858816226330}
@@ -346,7 +358,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
+  m_AnchoredPosition: {x: -2, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224064858816226330
