@@ -11,7 +11,7 @@ public class TurretController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        bulletPrefab = (GameObject) Resources.Load("Bullet");
+        bulletPrefab = (GameObject) Resources.Load("Prefab/Bullet");
         bulletSpawn = transform.Find("Gunpoint");
         timer = 0f;
 	}
