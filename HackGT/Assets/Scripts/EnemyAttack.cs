@@ -7,7 +7,7 @@ public class EnemyAttack : MonoBehaviour {
     public int attackDamage = 10;
 
     GameObject player;
-     PlayerHealth playerhealth;
+    PlayerHealth playerhealth;
 
     void Awake()
     {
@@ -18,7 +18,7 @@ public class EnemyAttack : MonoBehaviour {
 
     void Update()
     {
-        if(Input.GetKeyDown("space"))
+        if(Input.GetKeyDown(KeyCode.Q))
         {
             Debug.Log("space pressed");
             Debug.Log(playerhealth.currentHealth); 

@@ -148,8 +148,7 @@ MonoBehaviour:
   currentHealth: 100
   damageImage: {fileID: 114092203949225410, guid: d54ca17f6882afc43b1171ad9240810e,
     type: 2}
-  healthSlider: {fileID: 114117408777237836, guid: 43c26f3f6b7131d4d9f6c00518a8cbb2,
-    type: 2}
+  healthSlider: {fileID: 0}
   flashSpeed: 5
   flashColour: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &114684235182871308

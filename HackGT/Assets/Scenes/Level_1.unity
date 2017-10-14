@@ -1141,6 +1141,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114430421070475854, guid: 8ef102b3a671d5e45a9c4822d4ea8436,
+        type: 2}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 2124057394}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8ef102b3a671d5e45a9c4822d4ea8436, type: 2}
   m_IsPrefabParent: 0
@@ -4148,21 +4153,6 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -125.5
       objectReference: {fileID: 0}
-    - target: {fileID: 224018210017341096, guid: 43c26f3f6b7131d4d9f6c00518a8cbb2,
-        type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224677536692967128, guid: 43c26f3f6b7131d4d9f6c00518a8cbb2,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114117408777237836, guid: 43c26f3f6b7131d4d9f6c00518a8cbb2,
-        type: 2}
-      propertyPath: m_Value
-      value: 100
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 43c26f3f6b7131d4d9f6c00518a8cbb2, type: 2}
   m_IsPrefabParent: 0
@@ -4628,3 +4618,9 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: baf2fd44364964d41b886ce06ff54ff1, type: 3}
   m_PrefabInternal: {fileID: 2090819789}
+--- !u!114 &2124057394 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114117408777237836, guid: 43c26f3f6b7131d4d9f6c00518a8cbb2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1944701884}
+  m_Script: {fileID: -113659843, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
