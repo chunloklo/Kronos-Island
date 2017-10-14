@@ -18,8 +18,8 @@ public class BulletController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        transform.position += transform.forward * Time.deltaTime * movementSpeed;
-        timePassed += Time.deltaTime;
+        transform.position += transform.forward * GameObject.Find("TimeManager").GetComponent<TimeManager>().DeltaTime() * movementSpeed;
+        timePassed += GameObject.Find("TimeManager").GetComponent<TimeManager>().DeltaTime();
         if (timePassed >= timeAlive) {
             Destroy(gameObject);
         }
@@ -31,7 +31,6 @@ public class BulletController : MonoBehaviour {
     }
 
     void OnCollisionEnter(Collision col) {
-        Debug.Log(owner.tag);   
         if (col.gameObject.tag == "Player" && owner.tag == "Enemy") {
             col.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
             Destroy(gameObject);

@@ -18,7 +18,7 @@ public class TurretController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        timer += Time.deltaTime;
+        timer += GameObject.Find("TimeManager").GetComponent<TimeManager>().DeltaTime();
         if (timer > 1 / fireRate) {
             Fire();
             timer = 0f;

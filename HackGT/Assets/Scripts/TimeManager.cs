@@ -18,7 +18,7 @@ public class TimeManager : MonoBehaviour {
         timeScale = scale;
     }
 
-    public float deltaTime() {
+    public float DeltaTime() {
         return Time.deltaTime * timeScale;
     }
 }
