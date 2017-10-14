@@ -50,6 +50,7 @@ public class PlayerHealth : MonoBehaviour {
     void Death()
     {
         isDead = true;
+        Time.timeScale = 0;
         //make menu pop up
         //restart game
     }
