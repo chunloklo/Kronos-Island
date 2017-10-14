@@ -24,7 +24,6 @@ public class EnemyHealthController : MonoBehaviour {
     public void TakeDamage(int amount) {
         damaged = true;
         currentHealth -= amount;
-        //healthSlider.value = currentHealth;
         if (currentHealth <= 0 && !isDead) {
             Death();
         }

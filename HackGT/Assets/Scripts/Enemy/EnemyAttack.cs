@@ -18,12 +18,7 @@ public class EnemyAttack : MonoBehaviour {
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            Debug.Log("space pressed");
-            Debug.Log(playerhealth.currentHealth); 
-            playerhealth.TakeDamage(attackDamage);
-        }
+
     }
 
     //void OnCollisionEnter(Collision collision)
