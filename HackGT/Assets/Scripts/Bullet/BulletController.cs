@@ -9,6 +9,7 @@ public class BulletController : MonoBehaviour {
     public float timeAlive;
     // Use this for initialization
     void Start() {
+        timeAlive = 5;
         timePassed = 0f;
     }
 
