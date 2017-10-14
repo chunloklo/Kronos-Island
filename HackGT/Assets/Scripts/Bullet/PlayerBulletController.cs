@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletController : MonoBehaviour {
+public class PlayerBulletController : MonoBehaviour {
 
     public float movementSpeed;
+    public float finalVelocity;
     private float timePassed;
     public float timeAlive;
     public int damage;
@@ -18,12 +19,15 @@ public class BulletController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        if (!GameObject.Find("TimeManager").GetComponent<TimeManager>().Stopped()) {
+            movementSpeed = finalVelocity;
+            timePassed = 0;
+        }
         transform.position += transform.forward * GameObject.Find("TimeManager").GetComponent<TimeManager>().DeltaTime() * movementSpeed;
         timePassed += GameObject.Find("TimeManager").GetComponent<TimeManager>().DeltaTime();
         if (timePassed >= timeAlive) {
             Destroy(gameObject);
         }
-        
     }
 
     public void SetOwner(GameObject obj) {
@@ -39,7 +43,7 @@ public class BulletController : MonoBehaviour {
             Destroy(gameObject);
         }
         if (col.gameObject.layer == 8) {
-   
+
             Destroy(gameObject);
         }
     }

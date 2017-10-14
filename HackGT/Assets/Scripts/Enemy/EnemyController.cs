@@ -18,7 +18,7 @@ public class EnemyController : MonoBehaviour {
 	void Update () {
         transform.LookAt(player.transform);
         if (Vector3.Distance(transform.position, player.transform.position) >= 5) {
-            transform.position += transform.forward * Time.deltaTime * movementSpeed;
+            transform.position += transform.forward * GameObject.Find("TimeManager").GetComponent<TimeManager>().DeltaTime() * movementSpeed;
         }
         //transform.position = Vector3.MoveTowards(transform.position, player.transform.position, movementSpeed);
 

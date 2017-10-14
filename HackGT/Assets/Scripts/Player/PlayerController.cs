@@ -28,19 +28,21 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        float timeScale = GameObject.Find("TimeManager").GetComponent<TimeManager>().timeScale;
         if (controller.isGrounded)
         {
+            
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection *= walkSpeed;
             if (Input.GetButton("Jump"))
                 moveDirection.y = jumpSpeed;
         }
-        moveDirection.y -= gravity * Time.deltaTime;
-        controller.Move(moveDirection * Time.deltaTime);
+        moveDirection.y -= gravity * Time.deltaTime * timeScale;
+        controller.Move(moveDirection * Time.deltaTime * timeScale);
 
         //attack
-        if (Input.GetMouseButton(0)) {
+        if (Input.GetMouseButtonDown(0)) {
             fireController.Fire();
         }
 

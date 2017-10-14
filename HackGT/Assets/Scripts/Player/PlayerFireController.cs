@@ -7,18 +7,21 @@ public class PlayerFireController : MonoBehaviour {
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
     public float fireRate;
-    private float timer;
+    public float timer;
+    public int burstNum;
+    public int shotCount;
 
     // Use this for initialization
     void Start() {
         bulletPrefab = (GameObject)Resources.Load("Prefab/PlayerBullet");
         bulletSpawn = transform;
         timer = 0f;
+        shotCount = burstNum;
     }
 
     // Update is called once per frame
     void Update() {
-        timer -= Time.deltaTime;
+        timer -= GameObject.Find("TimeManager").GetComponent<TimeManager>().DeltaTime();
     }
 
 
@@ -29,8 +32,14 @@ public class PlayerFireController : MonoBehaviour {
             bulletSpawn.position,
             bulletSpawn.rotation);
             bullet.GetComponent<BulletController>().SetOwner(transform.parent.gameObject);
-            timer = 1 / fireRate;
+            bullet.GetComponent<BulletController>().movementSpeed = 0;
+            shotCount = shotCount - 1;
+            
         }
         
+        if (shotCount <= 0) {
+            timer = 1 / fireRate;
+            shotCount = burstNum;
+        }
     }
 }
