@@ -139,8 +139,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1910911164298508}
-  m_LocalRotation: {x: -0.09883601, y: -0.027532604, z: -0.026125826, w: 0.99437964}
-  m_LocalPosition: {x: 2.56, y: 5.17, z: -16.39}
+  m_LocalRotation: {x: -0.031220917, y: -0.034568533, z: -0.018778445, w: 0.99873805}
+  m_LocalPosition: {x: 677.58, y: 307.19, z: 529.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4970592983550872}
@@ -525,11 +525,13 @@ MonoBehaviour:
   timer: 0
   freezeTime: 3
   freezeTimer: 0
-  burstNum: 3
+  burstNum: 6
   shotCount: 0
   firemode: 0
   gunShot: {fileID: 82242236290720932}
   gunCharge: {fileID: 82383605617445588}
+  bulletCount: {fileID: 0}
+  time: {fileID: 0}
 --- !u!120 &120538980787069758
 LineRenderer:
   m_ObjectHideFlags: 1

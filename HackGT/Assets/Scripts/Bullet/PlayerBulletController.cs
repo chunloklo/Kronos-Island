@@ -37,17 +37,17 @@ public class PlayerBulletController : MonoBehaviour {
 
     void OnCollisionEnter(Collision col) {
         Debug.Log(owner);
-        
+
         if (col.gameObject.tag == "Player" && owner.tag == "Enemy") {
             AudioSource.PlayClipAtPoint(clip, GameObject.Find("Player").transform.position);
             col.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
-            
+
             Destroy(gameObject);
         } else if (col.gameObject.tag == "Enemy" && owner.tag == "Player") {
             AudioSource.PlayClipAtPoint(clip, GameObject.Find("Player").transform.position);
             Debug.Log(col);
             Debug.Log(owner);
-            
+
             col.gameObject.GetComponent<EnemyHealthController>().TakeDamage(damage);
             Destroy(gameObject);
         }
