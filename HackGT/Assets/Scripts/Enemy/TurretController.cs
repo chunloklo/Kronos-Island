@@ -11,9 +11,18 @@ public class TurretController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        bulletPrefab = (GameObject) Resources.Load("Prefab/Bullet");
-        bulletSpawn = transform.Find("Gunpoint");
-        timer = 0f;
+        if (gameObject.name == "Grenade Enemy")
+        {
+            bulletPrefab = (GameObject)Resources.Load("Prefab/Grenade");
+            bulletSpawn = transform.Find("Gunpoint");
+            timer = 0f;
+        }
+        else
+        {
+            bulletPrefab = (GameObject)Resources.Load("Prefab/Bullet");
+            bulletSpawn = transform.Find("Gunpoint");
+            timer = 0f;
+        }
 	}
 	
 	// Update is called once per frame
