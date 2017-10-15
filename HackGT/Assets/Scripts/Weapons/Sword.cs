@@ -14,6 +14,9 @@ public class Sword : MonoBehaviour {
 
     void OnTriggerEnter(Collider collider)
     {
-        player.GetComponent<PlayerHealth>().TakeDamage(damage);
+        if (collider.gameObject.tag == "Player")
+        {
+            player.GetComponent<PlayerHealth>().TakeDamage(damage);
+        }
     }
 }

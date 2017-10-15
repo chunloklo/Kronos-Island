@@ -12,7 +12,11 @@ public class PlayerTimeStop : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown(KeyCode.T)) {
-            Debug.Log("PRESSED");
+            //Debug.Log("PRESSED");
+            GameObject.Find("TimeManager").GetComponent<TimeManager>().SwitchTime();
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
             GameObject.Find("TimeManager").GetComponent<TimeManager>().SwitchTime();
         }
 	}

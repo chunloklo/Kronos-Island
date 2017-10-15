@@ -6,23 +6,41 @@ public class MeleeAttack : MonoBehaviour
 {
     public GameObject sword;
     float radius;
+    bool isSwing;
 
     void Start()
     {
         radius = GetComponentInChildren<SphereCollider>().radius;
+        //Debug.Log(radius);
     }
 
     void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.tag == "Player")
         {
-            startSwinging();
+            //Debug.Log("Start swinging!");
+            isSwing = true;
         }
+    }
+
+    void OnTriggerExit(Collider collision)
+    {
+        isSwing = false;
+    }
+
+    void Update()
+    {
+        if (isSwing)
+        {
+            startSwinging();
+        } 
     }
 
     void startSwinging()
     {
-        sword.transform.position = Vector3.Slerp(sword.transform.position, new Vector3(1, 0, 1), 0.01f);
+        //sword.transform.position = sword.transform.position + new Vector3(0.3f, 0.3f, 0.3f);
+        sword.transform.RotateAround(sword.transform.parent.position, Vector3.down, 500 * Time.deltaTime);
+        //sword.transform.localPosition = Vector3.Slerp(sword.transform.localPosition, new Vector3(1, 0, 1), 0.01f);
     }
 
 }

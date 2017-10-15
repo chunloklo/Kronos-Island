@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 33814229174635950}
   - component: {fileID: 23324268661431824}
   - component: {fileID: 122736791630810026}
+  - component: {fileID: 136802472902952802}
+  - component: {fileID: 114628985497207594}
   m_Layer: 0
   m_Name: HandLight
   m_TagString: Untagged
@@ -35,8 +37,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1115579142108492}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 655.2, y: 309.004, z: 539.94}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.0772705, y: 0.07974243, z: -2.6087036}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,6 +85,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1115579142108492}
   m_Mesh: {fileID: 4300000, guid: 2b858557e2e59a748a2c7606a9052648, type: 3}
+--- !u!114 &114628985497207594
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1115579142108492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4b99a943e56cd46907dcea174dbb5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!122 &122736791630810026
 Halo:
   m_ObjectHideFlags: 1
@@ -94,3 +107,16 @@ Halo:
     serializedVersion: 2
     rgba: 4282006271
   m_Size: 1
+--- !u!136 &136802472902952802
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1115579142108492}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.5
+  m_Height: 4
+  m_Direction: 0
+  m_Center: {x: -0.31035626, y: -0.00000008940697, z: 0.000000007450581}

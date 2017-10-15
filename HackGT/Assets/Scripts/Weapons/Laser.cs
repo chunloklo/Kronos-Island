@@ -16,7 +16,7 @@ public class Laser : MonoBehaviour {
         RaycastHit hit;
         Ray ray = new Ray(gameObject.transform.position, gameObject.transform.forward);
         if (Physics.Raycast(ray, out hit)) {
-            Debug.Log("HIT");
+            //Debug.Log("HIT");
             lr.transform.position = gameObject.transform.position;
             lr.SetPosition(0, new Vector3(0, 0, hit.distance));
         }
