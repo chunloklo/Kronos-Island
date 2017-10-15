@@ -17,6 +17,8 @@ public class PlayerFireController : MonoBehaviour {
     public bool firemode;
     public AudioSource gunShot;
     public AudioSource gunCharge;
+    public AudioSource recharged;
+    private Boolean played;
 
     //UI
     public Text bulletCount;
@@ -35,12 +37,20 @@ public class PlayerFireController : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
+        if (timer < 0 && !played && !firemode) {
+            recharged.Play();
+            played = true;
+            
+        }
+
+
         //initiate freezetime
         if (Input.GetMouseButtonDown(1) && !firemode && timer < 0) {
             //Debug.Log("switch");
             GameObject.Find("TimeManager").GetComponent<TimeManager>().SwitchTime();
             firemode = true;
             shotCount = burstNum;
+            timer = reloadTime;
             freezeTimer = freezeTime;
         } else if (Input.GetMouseButtonDown(1) && firemode) {
             GameObject.Find("TimeManager").GetComponent<TimeManager>().SwitchTime();
@@ -49,7 +59,6 @@ public class PlayerFireController : MonoBehaviour {
             shotCount = 0;
         }
 
-        }
         bulletCount.text = "" + shotCount + "/" + burstNum;
         time.text = "" + Math.Round(freezeTimer, 2) + "s";
         if (Math.Round(freezeTimer, 2) < 0)
@@ -84,6 +93,7 @@ public class PlayerFireController : MonoBehaviour {
             GameObject.Find("TimeManager").GetComponent<TimeManager>().SwitchTime();
             timer = reloadTime;
             firemode = false;
+            shotCount = 0;
         }
     }
 
@@ -98,6 +108,7 @@ public class PlayerFireController : MonoBehaviour {
             bullet.GetComponent<PlayerBulletController>().SetOwner(transform.parent.gameObject);
             bullet.GetComponent<PlayerBulletController>().movementSpeed = 0;
             shotCount = shotCount - 1;
+            played = false;
 
         }
     }

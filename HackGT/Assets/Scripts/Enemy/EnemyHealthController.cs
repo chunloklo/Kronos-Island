@@ -11,6 +11,8 @@ public class EnemyHealthController : MonoBehaviour {
     public float flashSpeed = 5f;
     public Color flashColour = Color.red;
 
+    public ParticleSystem ds;
+
     bool isDead;
     bool damaged;
 
@@ -30,6 +32,8 @@ public class EnemyHealthController : MonoBehaviour {
     }
 
     void Death() {
+        ParticleSystem pe = Instantiate(ds, gameObject.transform.position, gameObject.transform.rotation);
+        Destroy(pe, 1);
         Destroy(gameObject);
         isDead = true;
         //make menu pop up

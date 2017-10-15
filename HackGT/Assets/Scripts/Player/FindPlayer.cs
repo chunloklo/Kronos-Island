@@ -30,9 +30,9 @@ public class FindPlayer : MonoBehaviour {
         {
             //Debug.Log("RELB");
             gameObject.GetComponent<Slider>().maxValue = firecon.reloadTime;
-            Debug.Log(firecon.reloadTime);
+            //Debug.Log(firecon.reloadTime);
             gameObject.GetComponent<Slider>().value = firecon.reloadTime - firecon.timer;
-            Debug.Log(firecon.timer);
+            //Debug.Log(firecon.timer);
         }
     }
 }

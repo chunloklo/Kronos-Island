@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4850702763361316}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Gunpoint
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 114611833602147304}
   - component: {fileID: 114154374147805386}
   - component: {fileID: 114532303046185362}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: NormalEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -53,8 +53,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1819693252375882}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.0185003, y: 3.034215, z: 3.9178555}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 12.7, y: -10.28, z: -30.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4850702763361316}
@@ -157,6 +157,7 @@ MonoBehaviour:
   damageImage: {fileID: 0}
   flashSpeed: 5
   flashColour: {r: 1, g: 0, b: 0, a: 1}
+  ds: {fileID: 198243509423922066, guid: 6bfcdc39cb462f446a1c746a7868a233, type: 2}
 --- !u!114 &114611833602147304
 MonoBehaviour:
   m_ObjectHideFlags: 1

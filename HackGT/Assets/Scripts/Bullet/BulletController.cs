@@ -35,9 +35,6 @@ public class BulletController : MonoBehaviour {
         if (col.gameObject.tag == "Player" && owner.tag == "Enemy") {
             col.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
             Destroy(gameObject);
-        } else if (col.gameObject.tag == "Enemy" && owner.tag == "Player") {
-            col.gameObject.GetComponent<EnemyHealthController>().TakeDamage(damage);
-            Destroy(gameObject);
         }
         if (col.gameObject.layer == 8) {
    
