@@ -22,7 +22,7 @@ public class BulletDisplay : MonoBehaviour {
             
             bullets[i] = Instantiate(image);
             bullets[i].transform.SetParent(transform.parent.gameObject.transform, false);
-            bullets[i].transform.position = transform.position + new Vector3(30, 0 ,0) * i - new Vector3(35, 100,0);
+            bullets[i].transform.position = transform.position + new Vector3(30, 0 ,0) * i - new Vector3(35, 50,0);
         }
     }
 	
