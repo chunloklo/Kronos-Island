@@ -38,6 +38,8 @@ public class PlayerHealth : MonoBehaviour {
 
     public void TakeDamage (int amount)
     {
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.Play();
         damaged = true;
         currentHealth -= amount;
         if(currentHealth <= 0 && !isDead)

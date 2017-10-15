@@ -11,17 +11,21 @@ public class TurretController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        float delay = Random.Range(0, .5f);
+
+
+
         if (gameObject.name == "Grenade Enemy")
         {
             bulletPrefab = (GameObject)Resources.Load("Prefab/Grenade");
             bulletSpawn = transform.Find("Gunpoint");
-            timer = 0f;
+            timer = delay;
         }
         else
         {
             bulletPrefab = (GameObject)Resources.Load("Prefab/Bullet");
             bulletSpawn = transform.Find("Gunpoint");
-            timer = 0f;
+            timer = delay;
         }
 	}
 	

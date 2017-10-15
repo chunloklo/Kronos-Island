@@ -203,6 +203,7 @@ MonoBehaviour:
   movementSpeed: 10
   timeAlive: 10
   damage: 10
+  owner: {fileID: 0}
 --- !u!114 &114655069616998946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -218,6 +219,7 @@ MonoBehaviour:
   finalVelocity: 30
   timeAlive: 5
   damage: 10
+  clip: {fileID: 8300000, guid: 6ea8386550d09684c8e8277d4a2995e1, type: 3}
 --- !u!135 &135564420093265072
 SphereCollider:
   m_ObjectHideFlags: 1
