@@ -17,7 +17,7 @@ public class EnemyController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         transform.LookAt(player.transform);
-        if (Vector3.Distance(transform.position, player.transform.position) >= 5) {
+        if (Vector3.Distance(transform.position, player.transform.position) >= 5 && Vector3.Distance(transform.position, player.transform.position) < 100) {
             transform.position += transform.forward * GameObject.Find("TimeManager").GetComponent<TimeManager>().DeltaTime() * movementSpeed;
         }
         //transform.position = Vector3.MoveTowards(transform.position, player.transform.position, movementSpeed);

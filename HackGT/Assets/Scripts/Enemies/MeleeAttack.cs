@@ -14,7 +14,7 @@ public class MeleeAttack : MonoBehaviour
         //Debug.Log(radius);
     }
 
-    void OnTriggerEnter(Collider collision)
+    void OnTriggerStay(Collider collision)
     {
         if(collision.gameObject.tag == "Player")
         {
