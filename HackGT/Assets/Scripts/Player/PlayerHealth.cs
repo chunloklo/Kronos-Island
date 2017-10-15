@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour {
     public float flashSpeed = 5f;
     public Color flashColour = Color.red;
     public GameObject menu;
+    public GameObject winMenu;
 
     bool isDead;
     bool damaged;
@@ -23,6 +24,7 @@ public class PlayerHealth : MonoBehaviour {
         //player = GameObject.FindGameObjectWithTag("Player");
         currentHealth = startingHealth;
         menu.SetActive(false);
+        winMenu.SetActive(false);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -55,6 +57,14 @@ public class PlayerHealth : MonoBehaviour {
     public void TakeHealth (int amount)
     {
         currentHealth += amount;
+    }
+
+    public void Win() 
+    {
+        winMenu.SetActive(true);
+        Destroy(menu);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     void Death()
