@@ -35,6 +35,8 @@ public class PlayerBulletController : MonoBehaviour {
     }
 
     void OnCollisionEnter(Collision col) {
+        Debug.Log(col);
+        Debug.Log(owner);
         if (col.gameObject.tag == "Player" && owner.tag == "Enemy") {
             col.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
             Destroy(gameObject);

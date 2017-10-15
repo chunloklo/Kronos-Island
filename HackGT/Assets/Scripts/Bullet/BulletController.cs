@@ -8,7 +8,7 @@ public class BulletController : MonoBehaviour {
     private float timePassed;
     public float timeAlive;
     public int damage;
-    private GameObject owner;
+    public GameObject owner;
     // Use this for initialization
     void Start() {
         timeAlive = 5;
@@ -31,6 +31,7 @@ public class BulletController : MonoBehaviour {
     }
 
     void OnCollisionEnter(Collision col) {
+        Debug.Log(col.gameObject.tag);
         if (col.gameObject.tag == "Player" && owner.tag == "Enemy") {
             col.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
             Destroy(gameObject);

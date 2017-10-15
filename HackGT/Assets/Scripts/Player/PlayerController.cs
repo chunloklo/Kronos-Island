@@ -41,10 +41,10 @@ public class PlayerController : MonoBehaviour
         moveDirection.y -= gravity * Time.deltaTime * timeScale;
         controller.Move(moveDirection * Time.deltaTime * timeScale);
 
-        //attack
-        if (Input.GetMouseButtonDown(0)) {
-            fireController.Fire();
-        }
+        //migrated to fireController
+        //if (Input.GetMouseButtonDown(0)) {
+        //    fireController.Fire();
+        //}
 
     }
 }

@@ -15,10 +15,10 @@ public class PlayerTimeStop : MonoBehaviour {
             //Debug.Log("PRESSED");
             GameObject.Find("TimeManager").GetComponent<TimeManager>().SwitchTime();
         }
-        if (Input.GetMouseButtonDown(1))
-        {
-            GameObject.Find("TimeManager").GetComponent<TimeManager>().SwitchTime();
-        }
+        //if (Input.GetMouseButtonDown(1))
+        //{
+        //    GameObject.Find("TimeManager").GetComponent<TimeManager>().SwitchTime();
+        //}
 	}
 
 
