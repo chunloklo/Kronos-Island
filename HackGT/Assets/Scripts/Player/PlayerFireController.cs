@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System;
 
 public class PlayerFireController : MonoBehaviour {
 
@@ -14,6 +16,10 @@ public class PlayerFireController : MonoBehaviour {
     public int shotCount;
     public bool firemode;
 
+    //UI
+    public Text bulletCount;
+    public Text time;
+
     // Use this for initialization
     void Start() {
         bulletPrefab = (GameObject)Resources.Load("Prefab/PlayerBullet");
@@ -21,6 +27,7 @@ public class PlayerFireController : MonoBehaviour {
         timer = 0f;
         shotCount = 0;
         firemode = false;
+        //bulletCount.text = "" + shotCount + "/" + burstNum;
     }
 
     // Update is called once per frame
@@ -28,13 +35,21 @@ public class PlayerFireController : MonoBehaviour {
 
         //initiate freezetime
         if (Input.GetMouseButtonDown(1) && !firemode && timer < 0) {
-            Debug.Log("switch");
+            //Debug.Log("switch");
             GameObject.Find("TimeManager").GetComponent<TimeManager>().SwitchTime();
             firemode = true;
             shotCount = burstNum;
             freezeTimer = freezeTime;
-        }
 
+        }
+        bulletCount.text = "" + shotCount + "/" + burstNum;
+        time.text = "" + Math.Round(freezeTimer, 2) + "s";
+        if (Math.Round(freezeTimer, 2) < 0)
+        {
+            time.text = 0 + "" + "s";
+        }
+        bulletCount.enabled = true;
+        time.enabled = true;
         //if (Input.GetMouseButtonDown(1) && firemode) {
         //    GameObject.Find("TimeManager").GetComponent<TimeManager>().SwitchTime();
         //    firemode = false;
@@ -43,6 +58,8 @@ public class PlayerFireController : MonoBehaviour {
 
         if (!firemode) {
             timer -= GameObject.Find("TimeManager").GetComponent<TimeManager>().DeltaTime();
+            bulletCount.enabled = false;
+            time.enabled = false;
         }
 
         if (firemode) {
@@ -50,6 +67,8 @@ public class PlayerFireController : MonoBehaviour {
             if (Input.GetMouseButtonDown(0)) {
                 Fire();
             }
+            bulletCount.enabled = true;
+            time.enabled = true;
         }
 
         if (shotCount == 0 && firemode) {
@@ -75,7 +94,7 @@ public class PlayerFireController : MonoBehaviour {
             bullet.GetComponent<BulletController>().SetOwner(transform.parent.gameObject);
             bullet.GetComponent<BulletController>().movementSpeed = 0;
             shotCount = shotCount - 1;
-            
+
         }
     }
 }
