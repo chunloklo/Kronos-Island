@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4073085251459358}
   - component: {fileID: 114829059076637442}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Gunpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 20018875047662188}
   - component: {fileID: 124098259110560562}
   - component: {fileID: 81647213485926434}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4886968213694316}
   - component: {fileID: 114744719195438618}
   - component: {fileID: 120538980787069758}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Railgun
   m_TagString: Untagged
   m_Icon: {fileID: 571167235653111936, guid: 0000000000000000d000000000000000, type: 0}
@@ -76,13 +76,9 @@ GameObject:
   - component: {fileID: 114430421070475854}
   - component: {fileID: 114684235182871308}
   - component: {fileID: 114360464376960366}
-<<<<<<< HEAD
-  m_Layer: 10
-=======
   - component: {fileID: 64353598987894324}
   - component: {fileID: 114517272996353864}
   m_Layer: 0
->>>>>>> c5a336c787ab6ef40eeb933a652e6e3cbaea4f0f
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -96,7 +92,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1241290982333414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.29, y: -0.26, z: 0.42}
+  m_LocalPosition: {x: 0.29, y: -0.26, z: 0.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4886968213694316}
@@ -305,18 +301,10 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1031656523068276, guid: 3af27aa010bf5284e9867d9b11ff36b8,
     type: 2}
   bulletSpawn: {fileID: 0}
-<<<<<<< HEAD
-  reloadTime: 3
-  timer: 0
-  burstNum: 3
-  shotCount: 0
-  firemode: 0
-=======
   fireRate: 4
   timer: 0
   burstNum: 0
   shotCount: 0
->>>>>>> c5a336c787ab6ef40eeb933a652e6e3cbaea4f0f
 --- !u!120 &120538980787069758
 LineRenderer:
   m_ObjectHideFlags: 1
