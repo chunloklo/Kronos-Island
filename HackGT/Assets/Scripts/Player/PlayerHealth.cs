@@ -23,6 +23,8 @@ public class PlayerHealth : MonoBehaviour {
         //player = GameObject.FindGameObjectWithTag("Player");
         currentHealth = startingHealth;
         menu.SetActive(false);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update ()
@@ -62,5 +64,8 @@ public class PlayerHealth : MonoBehaviour {
         //make menu pop up
         //restart game
         menu.SetActive(true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
     }
 }

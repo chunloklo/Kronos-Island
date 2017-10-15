@@ -22,7 +22,7 @@ public class MeleeController : MonoBehaviour {
         transform.LookAt(player.transform);
         //Debug.Log(player);
         if (Vector3.Distance(transform.position, player.transform.position) < 100  && Vector3.Distance(transform.position, player.transform.position) > .5f) {
-            rb.velocity = transform.forward * movementSpeed;
+            rb.velocity = transform.forward * movementSpeed * GameObject.Find("TimeManager").GetComponent<TimeManager>().timeScale;
         }
         
         //transform.position = Vector3.MoveTowards(transform.position, player.transform.position, movementSpeed);

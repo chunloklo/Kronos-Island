@@ -7,11 +7,16 @@ public class TimeManager : MonoBehaviour {
     public float normalTime = 1;
     public float slowTime = .3f;
     public bool timeStop;
-    AudioSource audio;
+    public AudioSource timeStopMusic;
+    public AudioSource normalTimeMusic;
     // Use this for initialization
     void Start () {
         timeStop = false;
-        audio = GetComponent<AudioSource>();
+        normalTimeMusic.loop = true;
+        timeStopMusic.Play();
+        timeStopMusic.Pause();
+        timeStopMusic.loop = true;
+        normalTimeMusic.Play();
     }
 	
 	// Update is called once per frame
@@ -25,11 +30,13 @@ public class TimeManager : MonoBehaviour {
 
     public void SwitchTime() {
         if (timeScale == slowTime) {
-            audio.Stop();
+            normalTimeMusic.UnPause();
+            timeStopMusic.Pause();
             timeStop = false;
             timeScale = normalTime;
         } else {
-            audio.Play();
+            normalTimeMusic.Pause();
+            timeStopMusic.UnPause();
             timeStop = true;
             timeScale = slowTime;
         }
