@@ -22,6 +22,7 @@ public class PlayerHealth : MonoBehaviour {
     void Awake ()
     {
         //player = GameObject.FindGameObjectWithTag("Player");
+        GameObject.Find("TimeManager").GetComponent<TimeManager>().timeScale = 1;
         currentHealth = startingHealth;
         menu.SetActive(false);
         winMenu.SetActive(false);
@@ -40,6 +41,11 @@ public class PlayerHealth : MonoBehaviour {
             damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
         }
         damaged = false;
+
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            Death();
+        }
+
     }
 
     public void TakeDamage (int amount)
@@ -61,6 +67,7 @@ public class PlayerHealth : MonoBehaviour {
 
     public void Win() 
     {
+        GameObject.Find("TimeManager").GetComponent<TimeManager>().timeScale = 0;
         winMenu.SetActive(true);
         Destroy(menu);
         Cursor.visible = true;
@@ -70,6 +77,7 @@ public class PlayerHealth : MonoBehaviour {
     void Death()
     {
         isDead = true;
+        GameObject.Find("TimeManager").GetComponent<TimeManager>().timeScale = 0;
         //Time.timeScale = 0;
         //make menu pop up
         //restart game

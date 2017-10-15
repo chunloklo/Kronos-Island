@@ -39,7 +39,7 @@ public class MeleeAttack : MonoBehaviour
     void startSwinging()
     {
         //sword.transform.position = sword.transform.position + new Vector3(0.3f, 0.3f, 0.3f);
-        sword.transform.RotateAround(sword.transform.parent.position, Vector3.down, 500 * Time.deltaTime);
+        sword.transform.RotateAround(sword.transform.parent.position, Vector3.down, 500 * GameObject.Find("TimeManager").GetComponent<TimeManager>().DeltaTime());
         //sword.transform.localPosition = Vector3.Slerp(sword.transform.localPosition, new Vector3(1, 0, 1), 0.01f);
     }
 
