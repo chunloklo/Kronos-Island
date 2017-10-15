@@ -13,7 +13,8 @@ public class PlayerHealth : MonoBehaviour {
     public Slider healthSlider;
     public float flashSpeed = 5f;
     public Color flashColour = Color.red;
-    
+    public GameObject menu;
+
     bool isDead;
     bool damaged;
 
@@ -21,6 +22,7 @@ public class PlayerHealth : MonoBehaviour {
     {
         //player = GameObject.FindGameObjectWithTag("Player");
         currentHealth = startingHealth;
+        menu.SetActive(false);
     }
 
     void Update ()
@@ -56,8 +58,9 @@ public class PlayerHealth : MonoBehaviour {
     void Death()
     {
         isDead = true;
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
         //make menu pop up
         //restart game
+        menu.SetActive(true);
     }
 }

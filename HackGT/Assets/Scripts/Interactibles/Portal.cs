@@ -12,5 +12,9 @@ public class Portal : MonoBehaviour {
         {
             gameObject.transform.position = (GameObject.FindGameObjectWithTag("Portal2").transform.position);
         }
+        if (collision.gameObject.tag == "Portal3")
+        {
+            gameObject.transform.position = (GameObject.FindGameObjectWithTag("Portal4").transform.position);
+        }
     }
 }
