@@ -8,6 +8,8 @@ public class PlayerFireController : MonoBehaviour {
     public Transform bulletSpawn;
     public float reloadTime;
     public float timer;
+    public float freezeTime;
+    public float freezeTimer;
     public int burstNum;
     public int shotCount;
     public bool firemode;
@@ -23,11 +25,14 @@ public class PlayerFireController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+
+        //initiate freezetime
         if (Input.GetMouseButtonDown(1) && !firemode && timer < 0) {
             Debug.Log("switch");
             GameObject.Find("TimeManager").GetComponent<TimeManager>().SwitchTime();
             firemode = true;
             shotCount = burstNum;
+            freezeTimer = freezeTime;
         }
 
         //if (Input.GetMouseButtonDown(1) && firemode) {
@@ -41,12 +46,19 @@ public class PlayerFireController : MonoBehaviour {
         }
 
         if (firemode) {
+            freezeTimer -= Time.deltaTime;
             if (Input.GetMouseButtonDown(0)) {
                 Fire();
             }
         }
 
         if (shotCount == 0 && firemode) {
+            GameObject.Find("TimeManager").GetComponent<TimeManager>().SwitchTime();
+            timer = reloadTime;
+            firemode = false;
+        }
+
+        if (freezeTimer <= 0 && firemode) {
             GameObject.Find("TimeManager").GetComponent<TimeManager>().SwitchTime();
             timer = reloadTime;
             firemode = false;
