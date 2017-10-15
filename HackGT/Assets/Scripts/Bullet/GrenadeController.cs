@@ -2,46 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrenadeController : MonoBehaviour
-{
-
-    GameObject player;
-    GameObject enemy;
-    public ParticleSystem explosion;
-    float bigRadius = 4.0f;
-    float medRadius = 3.0f;
-    float smallRadius = 2.0f;
-    public int bigDmg;
-    public int medDmg;
-    public int smallDmg;
-    public int enemyBonusDmg;
-    public bool isExploding;
-    int totalDmgPlayer;
-    int totalDmgEnemy;
-    bool hasTakenDmg;
+public class GrenadeController : MonoBehaviour {
+    public float movementSpeed;
+    private float timePassed;
+    public float timeAlive;
+    public int damage;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        enemy = GameObject.FindGameObjectWithTag("Enemy");
-        hasTakenDmg = false;
+        timeAlive = 5;
+        timePassed = 0f;
+        damage = 15;
     }
 
     void Update()
     {
-        isExploding = explosion.isPlaying;
-        if (isExploding)
+        transform.position += transform.forward * GameObject.Find("TimeManager").GetComponent<TimeManager>().DeltaTime() * movementSpeed;
+        timePassed += GameObject.Find("TimeManager").GetComponent<TimeManager>().DeltaTime();
+        if (timePassed >= timeAlive)
         {
-            Collider[] hitColliders = Physics.OverlapSphere(gameObject.transform.position, 4);
-            foreach (Collider col in hitColliders)
+            Destroy(gameObject);
+        }
+        detonateGrenade();
+    }
+
+    void detonateGrenade()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(gameObject.transform.position, 2);
+        foreach(Collider col in hitColliders)
+        {
+            if (col.gameObject.tag == "Player")
             {
-                if (col.gameObject.tag == "Player" && !hasTakenDmg)
-                {
-                    player.GetComponent<PlayerHealth>().TakeDamage(10);
-                    hasTakenDmg = true;
-                }
+
             }
         }
     }
 }
-

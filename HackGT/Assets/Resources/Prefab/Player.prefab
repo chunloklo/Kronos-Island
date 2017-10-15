@@ -76,6 +76,8 @@ GameObject:
   - component: {fileID: 114430421070475854}
   - component: {fileID: 114684235182871308}
   - component: {fileID: 114360464376960366}
+  - component: {fileID: 64353598987894324}
+  - component: {fileID: 114517272996353864}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -103,15 +105,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1910911164298508}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1888727, y: 1.93, z: -11.08}
+  m_LocalRotation: {x: 0, y: -0.3420201, z: 0, w: 0.9396927}
+  m_LocalPosition: {x: 673.3, y: 306.38, z: 530.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4970592983550872}
   - {fileID: 4073085251459358}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -40, z: 0}
 --- !u!4 &4886968213694316
 Transform:
   m_ObjectHideFlags: 1
@@ -173,6 +175,20 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!64 &64353598987894324
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1910911164298508}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 0}
 --- !u!81 &81647213485926434
 AudioListener:
   m_ObjectHideFlags: 1
@@ -224,6 +240,17 @@ MonoBehaviour:
   healthSlider: {fileID: 0}
   flashSpeed: 5
   flashColour: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &114517272996353864
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1910911164298508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff1db9220ccee043acaae0c947ba084, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114684235182871308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -271,11 +298,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec869976d1e64534f95c8e0083cf713d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1387961657314418, guid: 207e46eb6c587cd45bef15a24ef01d81,
+  bulletPrefab: {fileID: 1031656523068276, guid: 3af27aa010bf5284e9867d9b11ff36b8,
     type: 2}
   bulletSpawn: {fileID: 0}
-  fireRate: 1
+  fireRate: 4
   timer: 0
+  burstNum: 0
+  shotCount: 0
 --- !u!120 &120538980787069758
 LineRenderer:
   m_ObjectHideFlags: 1
