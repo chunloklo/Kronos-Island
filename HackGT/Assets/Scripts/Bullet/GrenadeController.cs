@@ -7,6 +7,13 @@ public class GrenadeController : MonoBehaviour {
     private float timePassed;
     public float timeAlive;
     public int damage;
+    ParticleSystem explosiveParticles;
+
+    void Awake() {
+        explosiveParticles = GetComponentInChildren<ParticleSystem>();
+        explosiveParticles.Stop();
+        //explosiveParticles.emission.enabled = false;
+    }
 
     void Start()
     {
@@ -33,7 +40,8 @@ public class GrenadeController : MonoBehaviour {
         {
             if (col.gameObject.tag == "Player")
             {
-
+                explosiveParticles.Play();
+                gameObject.transform.localScale = new Vector3(0, 0, 0);
             }
         }
     }

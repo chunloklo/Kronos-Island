@@ -345,10 +345,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 198751824842778824}
-  bigDmg: 2
-  medDmg: 3
-  smallDmg: 5
-  enemyBonusDmg: 5
+  bigDmg: 10
+  medDmg: 20
+  smallDmg: 30
+  enemyBonusDmg: 30
   isExploding: 0
 --- !u!114 &114637595342932662
 MonoBehaviour:
