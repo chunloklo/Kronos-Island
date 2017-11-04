@@ -11,3 +11,11 @@ You are an adventurer stuck on an island with some deadly killers. Given a gun b
 Simply download the `releases` folder and run `kronos_island_v0.1.exe`
 
 Sadly, Windows is the only supported platform currently. If you want to take a crack at running it on other OS, simply clone the project and run it in your Unity editor!
+
+**Controls** :
+
+movement : `WASD`
+
+readying to shoot : `right mouse click`
+
+shoot : `left mouse click`
